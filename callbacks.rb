@@ -9,7 +9,7 @@
 require 'rubygems'
 require 'pdf/reader'
 
-filename = File.expand_path(File.dirname(__FILE__)) + "/../spec/data/cairo-basic.pdf"
+filename = File.expand_path(File.dirname(__FILE__)) + "/1_1-5_2016.pdf"
 
 PDF::Reader.open(filename) do |reader|
   reader.pages.each do |page|
@@ -17,7 +17,7 @@ PDF::Reader.open(filename) do |reader|
     page.walk(receiver)
     
     receiver.callbacks.each do |cb|
-      puts cb
+      puts cb.inspect
     end
   end
 end
